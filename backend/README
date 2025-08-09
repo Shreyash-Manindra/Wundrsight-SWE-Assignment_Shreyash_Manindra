@@ -1,0 +1,25 @@
+# Backend (Express + SQLite)
+
+1. Install:
+   cd backend
+   npm install
+
+2. Create .env (copy .env.example) and set JWT_SECRET & FRONTEND_ORIGIN if needed.
+
+3. Seed users:
+   npm run seed
+
+4. Start server:
+   npm start
+   # or for dev:
+   npm run dev
+
+Server will run on PORT (default 4000). API base: http://localhost:4000/api
+
+Endpoints:
+- POST /api/register {name,email,password}
+- POST /api/login {email,password}
+- GET  /api/slots?from=YYYY-MM-DD&to=YYYY-MM-DD
+- POST /api/book {slotId}  (requires Bearer token, patient)
+- GET  /api/my-bookings  (patient)
+- GET  /api/all-bookings (admin)
